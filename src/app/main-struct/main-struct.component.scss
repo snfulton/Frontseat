@@ -1,0 +1,24 @@
+mat-sidenav-container {
+    height: 800px;
+}
+
+mat-sidenav, mat-sidenav-content {
+    padding: 16px;
+}
+
+mat-sidenav {
+    background-color: white;
+    width: 200px;
+}
+
+.mat-badge-content {
+    font-weight:600;font-size:12px;font-family:Roboto, "Helvetica Neue", sans-serif
+}
+
+.mat-badge-small .mat-badge-content{
+    font-size:9px
+}
+
+.mat-badge-large .mat-badge-content{
+    font-size:24px}
+    
