@@ -8,6 +8,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 <img width="1440" alt="Screen Shot 2021-09-03 at 4 03 38 PM" src="https://user-images.githubusercontent.com/47018642/132073036-ba99ba23-2d4e-42e7-b2d5-e796d7a83be0.png">
 <img width="1439" alt="Screen Shot 2021-09-03 at 4 04 36 PM" src="https://user-images.githubusercontent.com/47018642/132073073-6747ab0c-e38e-4980-b772-c8f6e4e9acff.png">
 <img width="1440" alt="Screen Shot 2021-09-03 at 4 05 01 PM" src="https://user-images.githubusercontent.com/47018642/132073078-aeebab86-0e60-4aa4-bb11-cc754e384e35.png">
+<img width="1440" alt="Screen Shot 2021-09-03 at 4 33 15 PM" src="https://user-images.githubusercontent.com/47018642/132074293-d6d187f7-9a54-428a-80b3-32f0812746b2.png">
 
 
 ## Development server
