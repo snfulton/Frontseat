@@ -3,7 +3,7 @@
 This is a front-end framework for a program that allows users, specifically in the performing arts, to block, rehearse, and track motion remotely in response to the difficulties presented by the COVID-19 pandemic.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.0.
 
-## Demonstration
+## Product
 ![Snip20210903_9](https://user-images.githubusercontent.com/47018642/132073055-aa83afa4-a21f-4d08-baaf-0ed1f9e95502.png)
 <img width="1440" alt="Screen Shot 2021-09-03 at 4 03 38 PM" src="https://user-images.githubusercontent.com/47018642/132073036-ba99ba23-2d4e-42e7-b2d5-e796d7a83be0.png">
 <img width="1439" alt="Screen Shot 2021-09-03 at 4 04 36 PM" src="https://user-images.githubusercontent.com/47018642/132073073-6747ab0c-e38e-4980-b772-c8f6e4e9acff.png">
