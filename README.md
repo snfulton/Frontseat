@@ -1,5 +1,6 @@
-# MyApp
+# Frontseat
 
+This is a front-end framework for a program that allows users, specifically in the performing arts, to block, rehearse, and track motion remotely in response to the difficulties presented by the COVID-19 pandemic.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.0.
 
 ## Development server
