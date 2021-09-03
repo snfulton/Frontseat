@@ -77,3 +77,4 @@ export class MainStructComponent {
     return node.children;
   }
 }
+

@@ -1,0 +1,39 @@
+<!-- Title Input Section -->
+<p style="text-align: center; font-size: x-large;">
+    Production Title
+</p>
+<form style="text-align: center;">
+    <div class="example-container">
+        <mat-form-field appearance="standard">
+            <mat-label>Title</mat-label>
+            <input 
+              type="text"
+              matInput 
+              [formControl]="titleInput"
+              ngModel
+              [(ngModel)]="title"
+              >
+        </mat-form-field>
+    </div>
+    
+</form>
+
+<!-- Structure Input Section -->
+<p style="text-align: center; font-size: x-large;">
+    Play Structure
+</p>
+<div class="container" style="text-align: center;">
+    <div>
+    Number of Acts: {{counter}}
+    <button class="btn btn-success mat-mini-fab" style="font-size: large;" (click)="addAct()">+</button>
+    </div>
+    <div *ngFor="let act of numActs; let i = index">
+        <p> 
+            Act {{ numActs[i] }} 
+        <button class="btn btn-primary" (click)="addScene(i)" > + scene </button>
+        </p>
+        
+        <li> Scene </li>
+    </div>
+</div>
+

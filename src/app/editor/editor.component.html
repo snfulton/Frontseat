@@ -1,12 +1,31 @@
-<div id="mySidenav" class="sidenav">
-    <a>About</a>
-    <a>Services</a>
-    <a>Clients</a>
-    <a onclick="closeNav()">Contact</a>
-</div>
-  
-<div id="main">
-    <h2>Sidenav Push Example</h2>
-    <p>Click on the element below to open the side navigation menu, and push this content to the right.</p>
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-</div>
+<button mat-button routerLink="/split">Split</button>
+<mat-toolbar>
+    <button mat-icon-button class="fa fa-mouse-pointer fa-lg"></button>
+    <button mat-icon-button class="fa fa-arrows-alt fa-lg"></button>
+    <button mat-icon-button class="fas fa-redo fa-lg"></button>
+    <button mat-icon-button class="fas fa-expand-alt fa-lg"></button>
+    <button mat-icon-button class="fas fa-object-group fa-lg"></button>
+    <span class="example-spacer"></span>
+    
+    <button mat-icon-button class="fas fa-chevron-left fa-lg"></button>
+    <button mat-icon-button class="fa fa-plus fa-lg"></button>
+    <button mat-icon-button class="fas fa-chevron-right fa-lg"></button>
+    <span class="example-spacer"></span>
+
+    <button mat-icon-button class="fa fa-circle fa-lg" (click)="drawCircle()"></button>
+    <button mat-icon-button class="fa fa-square fa-lg" (click)="drawRect()"></button>
+    <button mat-icon-button class="fas fa-user-plus fa-lg" [matMenuTriggerFor]="charMenu"></button>
+    <mat-menu #charMenu="matMenu">
+        <mat-radio-group [(ngModel)]="character">
+            <mat-radio-button class="mat-menu-item" *ngFor="let char of characters" [value]="char">
+            {{char}}
+            </mat-radio-button>
+        </mat-radio-group>
+    </mat-menu>
+    <button mat-icon-button class="fas fa-eraser fa-lg" (click)="eraseAll()"></button>
+    <input [(colorPicker)]="color" [style.background]="color" [cpWidth]="'200px'" [style.width]=50/>
+</mat-toolbar>
+
+<canvas #canvas></canvas>
+
+<p> {{ character }} </p>

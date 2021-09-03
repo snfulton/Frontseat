@@ -1,0 +1,191 @@
+
+<!-- Character Input Section -->
+<!-- The resulting list of characters appears as character options in the cast section -->
+<p style="text-align: center; font-size: x-large;">
+    Character List
+</p>
+<form style="text-align: center;">
+    <div class="example-container">
+        <mat-form-field appearance="standard">
+            <mat-label>Enter character name</mat-label>
+            <input 
+              type="text"
+              name="charName"
+              id="charName"
+              matInput 
+              placeholder="Name"
+              [formControl]="chars"
+              ngModel
+              [(ngModel)]="newChar"
+              >
+        </mat-form-field>
+    </div>
+    <button [disabled]="chars.invalid" class="btn btn-primary" (click)="addChar()">Add</button>
+    <button class="btn btn-danger" (click)="deleteChar()">Delete</button>
+    
+    <li *ngFor="let char of charArray; let k=index"> {{ charArray[k] }} </li>
+
+</form>
+
+<!-- Crew Input Section -->
+<p style="text-align: center; font-size: x-large;">
+    Crew
+</p>
+<form (ngSubmit)="onCrewSubmit()">
+    <div class="example-container form-group row">
+        <mat-form-field appearance="standard" class="form-group col-md-2">
+          <mat-label>Enter name</mat-label>
+          <input 
+            matInput 
+            placeholder="Name"
+            [formControl]="crewName"
+            required
+            ngModel
+            [(ngModel)]="crewMem.name"
+            >
+            <mat-error *ngIf="crewName.invalid">{{getCrewNameErrorMessage()}}</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field appearance="standard" class="form-group col-md-2">
+            <mat-label>Enter email</mat-label>
+            <input 
+                matInput 
+                placeholder="Email" 
+                [formControl]="crewEmail" 
+                required
+                ngModel
+                [(ngModel)]="crewMem.email">
+            <mat-error *ngIf="crewEmail.invalid">{{getCrewEmailErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard" class="form-group col-md-2">
+            <mat-label>Phone number</mat-label>
+            <input 
+                matInput 
+                [formControl]="crewPhone" 
+                required
+                ngModel
+                [(ngModel)]="crewMem.phone">
+            <mat-icon matSuffix>phone</mat-icon>
+            <mat-error *ngIf="crewPhone.invalid">{{getCrewPhoneErrorMessage()}}</mat-error>
+        </mat-form-field>
+      
+        <mat-form-field appearance="standard" class="form-group col-md-2">
+          <mat-label>Select position</mat-label>
+          <mat-select
+            [formControl]="position"
+            required
+            ngModel
+            [(ngModel)]="crewMem.position">
+            <mat-option value="Director">Director</mat-option>
+            <mat-option value="Stage Manager">Stage Manager</mat-option>
+            
+          </mat-select>
+          <mat-error *ngIf="position.invalid">{{getPosErrorMessage()}}</mat-error>
+          <mat-hint align="end"></mat-hint>
+        </mat-form-field>
+    </div>
+    <button [disabled]="crewName.invalid || crewEmail.invalid || crewPhone.invalid || position.invalid" (click)="addCrewForm()" class="btn btn-success">Add</button>
+</form>
+
+<div class="container">
+    <div class="form-group row" *ngFor="let crew of crewArray">
+        <div class="col-md-3">
+            {{ crew.name }}
+        </div>
+        <div class="col-md-3">
+            {{ crew.email }}
+        </div>
+        <div class="col-md-3">
+            {{ crew.phone }}
+        </div>
+        <div class="col-md-2">
+            {{ crew.position }}
+        </div>
+        <div class="col-md-1">
+            <span class="btn btn-danger fa fa-trash fa-lg"></span>
+        </div>
+    </div>
+</div>
+
+<!-- Cast Input Section -->
+<p style="text-align: center; font-size: x-large;">
+    Cast
+</p>
+<form (ngSubmit)="onCastSubmit()">
+    <div class="example-container" class="form-group row">
+        <mat-form-field appearance="standard" class="form-group col-md-2">
+          <mat-label>Enter name</mat-label>
+          <input 
+            matInput 
+            placeholder="Name"
+            [formControl]="castName"
+            required
+            ngModel
+            [(ngModel)]="actor.name"
+            >
+            <mat-error *ngIf="castName.invalid">{{getCastNameErrorMessage()}}</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field appearance="standard" class="form-group col-md-2">
+            <mat-label>Enter email</mat-label>
+            <input 
+                matInput 
+                placeholder="Email" 
+                [formControl]="castEmail" 
+                required
+                ngModel
+                [(ngModel)]="actor.email">
+            <mat-error *ngIf="castEmail.invalid">{{getCastEmailErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard" class="form-group col-md-3">
+            <mat-label>Phone number</mat-label>
+            <input 
+                matInput 
+                [formControl]="castPhone" 
+                required
+                ngModel
+                [(ngModel)]="actor.phone">
+            <mat-icon matSuffix>phone</mat-icon>
+            <mat-error *ngIf="castPhone.invalid">{{getCastPhoneErrorMessage()}}</mat-error>
+        </mat-form-field>
+      
+        <mat-form-field appearance="standard" class="form-group col-md-2">
+          <mat-label>Select character</mat-label>
+          <mat-select
+            [formControl]="charSel"
+            required
+            ngModel
+            [(ngModel)]="actor.character">
+            <div *ngFor="let char of charArray; let i=index">
+                <mat-option value="{{charArray[i]}}"> {{ charArray[i] }} </mat-option>
+            </div>
+            <mat-option value="Actor">Actor</mat-option>
+          </mat-select>
+          <mat-error *ngIf="charSel.invalid">{{getCharSelErrorMessage()}}</mat-error>
+          <mat-hint align="end"></mat-hint>
+        </mat-form-field>
+    </div>
+    <span (click)="addCastForm()" class="btn btn-success">Add</span>
+</form>
+
+<div class="container">
+    <div class="form-group row" *ngFor="let cast of castArray">
+        <div class="col-md-3">
+            {{ cast.name }}
+        </div>
+        <div class="col-md-3">
+            {{ cast.email }}
+        </div>
+        <div class="col-md-3">
+            {{ cast.phone }}
+        </div>
+        <div class="col-md-2">
+            {{ cast.character }}
+        </div>
+        <div class="col-md-1">
+            <span class="btn btn-danger fa fa-trash fa-lg"></span>
+        </div>
+    </div>
+</div>

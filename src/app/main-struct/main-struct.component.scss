@@ -22,3 +22,19 @@ mat-sidenav {
 .mat-badge-large .mat-badge-content{
     font-size:24px}
     
+.spacer {
+    flex: 1 1 auto;
+}
+
+a {
+    margin: 5px;
+}
+
+.menu-items {
+    justify-content: center;
+    font-size: 17px;
+}
+
+mat-toolbar {
+    justify-content: center;
+}
